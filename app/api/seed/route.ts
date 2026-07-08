@@ -4,10 +4,6 @@ import { staff, rooms, guests, bookings } from "@/lib/schema";
 import bcrypt from "bcryptjs";
 
 export async function GET() {
-  await db.delete(bookings);
-  await db.delete(guests);
-  await db.delete(rooms);
-  await db.delete(staff);
 
   // Staff
   const adminPass = await bcrypt.hash("admin123", 10);
